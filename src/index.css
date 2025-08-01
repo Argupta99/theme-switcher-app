@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white text-black font-sans;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
 }
 
+/*theme variables for UI*/
+
+[data-theme = "light"]{
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+[data-theme = "dark"]{
+  --bg: #121212;
+  --text: #ffffff;
+}
+
+[data-theme = "monokai"]{
+  --bg: #2D2A2E;
+  --text: #FCFCFA;
+}
 
