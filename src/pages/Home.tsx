@@ -1,9 +1,23 @@
-function Home () {
-    return (
-        <h1 className="text-3xl font-bold text-red-500 bg-yellow-100 p-4 rounded-lg">
-  Home
-</h1>
-    );
-}
+import card from "../Components/Cards";
+
+//makeing an array of data to pass to the card components
+
+const cardData = [
+    {
+        title: "Card 1",
+        description: "This is the first card.",
+       
+    },
+    {
+        title: "Card 2",
+        description: "This is the second card.",
+        
+    },
+    {
+        title: "Card 3",
+        description: "This is the third card.",
+        
+    }
+]
 
 export default Home;
