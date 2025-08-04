@@ -1,3 +1,5 @@
+// Reusable Card component used across Home and About pages.
+
 import { Link } from "react-router-dom";
 import { useTheme } from "../Context/ThemeContext";
 import Button from "../Components/Button";
