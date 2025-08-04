@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { cardData } from "../data";
-
+//for local dummy data
 function Details() {
   const { id } = useParams();
   const card = cardData.find((item) => item.id === id);
