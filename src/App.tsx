@@ -28,7 +28,7 @@ function App() {
     
     <aside className="w-64 bg-[var(--sidebar-bg)] p-6 sticky top-0 h-screen hidden md:block">
   <h2 className='text-xl font-bold mb-4'>
-   🌙 Theme App 
+   🌙 
   </h2>
 
   <nav>

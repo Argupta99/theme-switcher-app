@@ -28,7 +28,7 @@ const [products, setProducts] = useState<ProductType[]>([]);
     
 return (
     <main className="p-6">
-      <h1 className="font-bold text-2xl mb-6">Home</h1>
+      
       <div className={`${
           theme === "monokai"
             ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6"
