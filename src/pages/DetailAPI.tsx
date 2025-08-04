@@ -11,6 +11,7 @@ type Product = {
 };
 
 function DetailAPI() {
+    {/**Uses useParams to extract product ID and fetches matching data */}
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
 
@@ -21,6 +22,8 @@ function DetailAPI() {
         .then((data) => setProduct(data));
     }
   }, [id]);
+
+  {/**If product is not found, display loading message */}
 
   if (!product) {
     return (
