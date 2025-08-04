@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+Create a detailed README.md file for my React TypeScript project called "Multi-Theme Switcher App".
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Vite-powered SPA built for an assignment. It allows users to switch between three distinct themes that each differ in colors, layout, fonts, spacing, and structure.
 
-Currently, two official plugins are available:
+Here's what my app includes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Themes:
+1. **Theme 1 (Light Default)** – Minimalist, sans-serif font, light layout.
+2. **Theme 2 (Dark Mode)** – Sidebar layout, serif font, bold contrast.
+3. **Theme 3 (Monokai Colorful)** – Grid card layout, playful colors with Pacifico font.
 
-## Expanding the ESLint configuration
+Theme Switcher:
+- Dropdown in the header to toggle between themes.
+- State managed by Context API.
+- Theme preference is persisted with `localStorage`.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+ Pages & Routing:
+- Home: shows cards from `https://fakestoreapi.com/products`
+- About: local dummy card data from `data.ts`, each opens in a detail page.
+- Contact: static info (optional).
+- Detail pages: 
+  - `/product/:id` — API data detail view
+  - `/details/:id` — Local dummy data detail view
+- React Router v6 is used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Design & UI:
+- Fully responsive (mobile-first).
+- TailwindCSS used for utility styling.
+- Footer sticks to bottom of every page.
+- Subtle animations: theme transition, nav hover, button interactions.
+- Reusable Button component.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Accessibility & Quality:
+- Proper alt tags, semantic tags.
+- Secure, no vulnerable dependencies.
+- Built with clean folder structure and good component separation.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Technologies Used:
+- React + Vite
+- TypeScript
+- Tailwind CSS
+- Context API
+- React Router DOM
+- `fakestoreapi.com`
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Installation Instructions:
+1. Clone the repo
+2. Run `npm install`
+3. Start the dev server with `npm run dev`
+
+ Folder Structure:
+- `/pages`: All main route pages
+- `/components`: Header, Footer, Button, Card
+- `/context`: ThemeContext
+- `/data.ts`: Dummy local card data
+- `App.tsx`: Layout wrapper
+- `main.tsx`: Entry point
+- `theme.css`: All CSS variables for themes
+
+
+
+✅ Deployment: Netlify
+
+
+
