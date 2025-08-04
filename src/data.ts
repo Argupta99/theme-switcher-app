@@ -1,6 +1,6 @@
 import kunzum from './images/kunzum_pass.jpg';
-import Canvas from './images/canvas.jpg';
-import Tea from './images/tea.jpg';
+import Canvas from './images/Canvas.jpg';
+import Tea from './images/Tea.jpg';
 
 
 export const cardData = [
