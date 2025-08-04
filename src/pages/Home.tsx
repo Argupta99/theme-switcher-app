@@ -1,42 +1,58 @@
+import { useEffect, useState } from "react";
 import Card from "../Components/Cards";
+import { useTheme } from "../Context/ThemeContext";
 
-//makeing an array of data to pass to the card components
 
-const cardData = [
-    {
-        id: "1",
-        title: "CHimalayan Stillness at Kunzum Pass",
-        description: "Where the sky is a shade of blue you've never seen before. Colorful prayer flags flutter in the cold, thin air, sending whispers across the stark, majestic peaks of Spiti Valley. A place where time slows, and the world feels pure.",
-       
-    },
-    {
-        id: "2",
-        title: "The Unfinished Canvas",
-        description: "The beautiful chaos of a new idea. The first bold stroke of cobalt blue on a blank canvas, surrounded by terracotta pots, scattered notes, and the promise of a story waiting to be told.",
-        
-    },
-    {
-        id:"3",
-        title: "Sunday Chai & Cardamom",
-        description: "There's a special kind of magic in the first sip of chai on a lazy Sunday. The warmth of the cup, the fragrant steam carrying notes of ginger and cardamom, and the soft rhythm of rain outside.",
-        
-    }
-]
+type ProductType = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  };
+
+
+
 
 function Home () {
-    return (
+    const { theme } = useTheme();
 
-        <main>
-            <h1>HomePage</h1>
+const [products, setProducts] = useState<ProductType[]>([]);
 
-           {cardData.map((card, index) => (
-        <Card 
-        key = {index}
-        title= {card.title}
-        description= {card.description} />
-       ) )}
-        </main>
-    );
+ useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+      
+  }, []);
+    
+return (
+    <main className="p-6">
+      <h1 className="font-bold text-2xl mb-6">Home</h1>
+      <div className={`${
+          theme === "monokai"
+            ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            : "flex flex-col"
+        }`}
+      >
+        
+
+        {products.map((product) => (
+            <Card
+          key={product.id}
+          id={product.id.toString()}
+          title={product.title}
+          description={product.description}
+          image={product.image}
+        />
+        ))}
+        </div>
+    </main>
+   
+);
+
+
+
+
 }
-
 export default Home;

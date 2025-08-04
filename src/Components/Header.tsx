@@ -1,20 +1,19 @@
 import {useTheme} from '../Context/ThemeContext'
-
-
+import { Link } from 'react-router-dom';
 
 function Header () {
 
   const {theme, ChangeTheme} = useTheme();
   return (
 
-    <header className="flex justify-between items-centre px-6 py-4 bg-[var(--bg-color)] text-[var(--text-color)] shadow-md flex-wrap">
+    <header className="flex justify-between items-center px-6 py-4 bg-[var(--bg-color)] text-[var(--text-color)] shadow-md flex-wrap w-full">
     <div className="text-xl font-bold">Theme Switcher</div>
     
     {theme !== "dark" &&(
     <nav className = "transition-all duration-300 hover:text-[var(--accent-color)]">
-    <a href="/" className="hover:text-[var(--accent-color)]">Home</a>
-    <a href="/about" className="hover:text-[var(--accent-color)]">About</a>  
-    <a href="/" className="hover:text-[var(--accent-color)]">Contact</a>
+    <Link to="/" className="hover:text-[var(--accent-color)] transition-all duration-200">Home</Link>
+      <Link to="/about" className="hover:text-[var(--accent-color)] transition-all duration-200">About</Link>
+      <Link to="/" className="hover:text-[var(--accent-color)] transition-all duration-200">Contact</Link>
     </nav>
     )}
 

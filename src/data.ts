@@ -1,7 +1,7 @@
 import kunzum from './images/kunzum_pass.jpg';
 import Canvas from './images/canvas.jpg';
 import Tea from './images/tea.jpg';
-//making an array of data to pass to the card components
+
 
 export const cardData = [
     {

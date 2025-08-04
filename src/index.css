@@ -2,28 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --font-family:sans-serif;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  display: flex;
+  min-height: 100vh;
 }
 
 /*theme variables for UI*/
 
 [data-theme = "light"]{
-  --bg: #ffffff;
-  --text: #000000;
+  --bg-color: #ffffff;
+   --text-color: #000000;
+   --font-family:sans-serif;
+   --dropdown-bg: #ffffff;
+   --dropdown-text: #000000;
+   --card-bg: #f1f1f1;
+    --accent-color: #3b82f6;
+    --card-padding: 1rem;
+  --sidebar-bg: #f9f9f9;
+  --dropdown-bg: #ffffff;
+  --dropdown-text: #000000;
+  --footer-bg: #ff2f2f2;
+
 }
 
 [data-theme = "dark"]{
-  --bg: #121212;
-  --text: #ffffff;
+  --bg-color: #1f1f1f;
+  --text-color: #f5f5f5;
+  --font-family:'Georgia', serif;
+  --accent-color: #2366f1;
+  --card-bg: #2c2c2c;
+  --card-padding: 1.5rem;
+  --sidebar-bg: #111827;
+  --dropdown-bg: #2c2c2c;
+  --dropdown-text: #ffffff;
+  --footer-bg: #1a1a1a;
+}
+
+header {
+  background-color: var(--header-bg);
+  padding: 1rem;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  width: 200px;
+  padding: 1rem;
+  
 }
 
 [data-theme = "monokai"]{
-  --bg: #2D2A2E;
-  --text: #FCFCFA;
+ --bg-color: #1e1e2f;
+ --text-color: #f8f8f2;
+--font-family: "Pacifico";
+--card-bg: #2b2b3c;
+--accent-color: #ff79c6;
+--dropdown-bg: #3c3c4e;
+--dropdown-text: #ffecf0;
+--card-padding: 2rem;
+--sidebar-bg: #3c3c4e;
+--footer-bg: #ff9cf3;
+
 }
 
+[data-theme = "light"] nav a,
+[data-theme = "dark"] nav a, 
+[data-theme = "monokai"] nav a {
+  padding: 0.5rem 0.75rem;
+}
