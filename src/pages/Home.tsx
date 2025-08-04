@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../Components/Cards";
 import { useTheme } from "../Context/ThemeContext";
 
-
+// Home page that fetches product data from fakestoreapi.com.
 type ProductType = {
   id: number;
   title: string;
