@@ -1,4 +1,5 @@
 function Footer () {
+    // Simple footer component shown on every page.
   return (
     <footer className="bg-[var(--footer-bg)] text-[var(--text-color)] text-center py-4 text-sm">
       <p>© 2025 Theme Switcher</p>
